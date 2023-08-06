@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% block title%} Contact {% endblock title%} 
+{% block body%}
+<div class="container-fluid px-0">
+  <img
+    src="https://source.unsplash.com/1600x500/?phone"
+    class="d-block w-100"
+    alt="..."
+  />
+</div>
+
+<div class="container text-center">
+  <h1 class="">Contact Us</h1>
+
+  <form method ="post" action='/contact'>
+    {% csrf_token %}
+    <div class="mb-3 my-5">
+      <label for="exampleInputName"class="form-label">Name</label>
+      <input
+        name="name"
+        type="text"
+        class="form-control"
+        id="exampleInputName"
+        placeholder="Enter your name" 
+        aria-describedby="nameHelp"
+      />
+      <div id="emailHelp" class="form-text">
+        We'll never share your personal information with anyone else.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputMobile"class="form-label">Mobile No</label>
+      <input type="natural"  placeholder="Enter your mob no" class="form-control" id="exampleInputMobile" name ="mobile" />
+    </div>
+  
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+{% endblock body%}
